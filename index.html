@@ -1,35 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bear Ninja Hunter Game</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
 </head>
 <body>
     <h1>Bear Ninja Hunter Game</h1>
-    <input type="text" id="userInput" placeholder="Enter Bear, Ninja, or Hunter">
+    <input type="text" id="playerChoice" placeholder="Enter Bear, Ninja, or Hunter">
     <button onclick="playGame()">Play</button>
-    <p id="demo">Replace this content with scripted content</p>
+    <div class="result" id="result">
 
-    <script>
-        document.getElementById("demo").innerHTML = 3 + 8;
-        document.getElementById('demo').innerHTML = 'A string of text!';
+    <script src="text/javascript">
+       let playerName = '';
 
-        let variable = "example variable";
-        let anotherVariable = "another example";
-        console.log(`${variable}, Another text string ` + anotherVariable + '!');
-        alert(8 + 3);
+function playGame() {
+    if (!playerName) {
+        playerName = prompt('Welcome to Bear Ninja Hunter! What is your name?');
+        alert(`Hello, ${playerName}! Let's play Bear Ninja Hunter.`);
+    }
 
-        
-            function playGame() {
-            const userInput = document.getElementById('userInput').value;
-            const message = "Player chose: " + userInput;
+    const playerChoice = document.getElementById('playerChoice').value.toLowerCase();
+    const choices = ['bear', 'ninja', 'hunter'];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-            
-            alert(message);
-            console.log(message);
-            document.getElementById('output').innerHTML = message;
-        }
+    let result = '';
+
+    if (playerChoice === computerChoice) {
+        result = `It's a tie! Both chose ${playerChoice}.`;
+    } else if (
+        (playerChoice === 'bear' && computerChoice === 'ninja') ||
+        (playerChoice === 'ninja' && computerChoice === 'hunter') ||
+        (playerChoice === 'hunter' && computerChoice === 'bear')
+    ) {
+        result = `You win, ${playerName}! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${computerChoice}.`;
+    } else {
+        result = `You lose, ${playerName}! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice}.`;
+    }
+
+    document.getElementById('result').innerHTML = result;
+    console.log(result);
+}
+ 
     </script>
-
-    <p id="output"></p>
+    </div>
 </body>
 </html>
+
