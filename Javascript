@@ -1,8 +1,0 @@
-      function playGame() {
-            const userInput = document.getElementById('userInput').value;
-            const message = "Player chose: " + userInput;
-
-            
-            alert(message);
-            console.log(message);
-            document.getElementById('output').innerHTML = message;
