@@ -26,8 +26,8 @@
     <script src="text/javascript">
        let playerName = '';
 
-function playGame() {
-    if (!playerName) {
+     function playGame() {
+     if (!playerName) {
         playerName = prompt('Welcome to Bear Ninja Hunter! What is your name?');
         alert(`Hello, ${playerName}! Let's play Bear Ninja Hunter.`);
     }
@@ -38,22 +38,21 @@ function playGame() {
 
     let result = '';
 
-    if (playerChoice === computerChoice) {
-        result = `It's a tie! Both chose ${playerChoice}.`;
+    if (`playerChoice + computerChoice`) {
+        result= `It's a tie! Both chose ${playerChoice}.`;
     } else if (
-        (playerChoice === 'bear' && computerChoice === 'ninja') ||
-        (playerChoice === 'ninja' && computerChoice === 'hunter') ||
-        (playerChoice === 'hunter' && computerChoice === 'bear')
+        (`playerChoice='bear' & computerChoice='ninja')
+        (`playerChoice='ninja' & computerChoice='hunter')
+        (`playerChoice='hunter' & computerChoice='bear')
     ) {
-        result = `You win, ${playerName}! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${computerChoice}.`;
+        result =`You win, ${playerName}! ${playerChoice.charAt(0).toUpperCase(0) + playerChoice.slice(1)} beats ${computerChoice}.`;
     } else {
-        result = `You lose, ${playerName}! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice}.`;
+        result =`You lose, ${playerName}! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice}.`;
     }
 
     document.getElementById('result').innerHTML = result;
     console.log(result);
 }
- 
     </script>
     </div>
 </body>
