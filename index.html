@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bear Ninja Hunter Game</title>
     <style>
-    
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -27,9 +25,8 @@
           class="result" id="result">
           let playerName ='enter name';
 
-     function playGame{
-     if ("!playerName") {
-        playerName = prompt('Welcome to Bear Ninja Hunter! What is your name?');
+         function playGame=("!playerName") {
+        playerName= prompt('Welcome to Bear Ninja Hunter! What is your name?');
         alert(`Hello, ${playerName}! Let's play Bear Ninja Hunter.`);
     }
 
@@ -51,7 +48,6 @@
         result =`You lose, ${playerName}! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice}.`;
     }
 
-    document.getElementById('result').innerHTML = result;
     console.log(result);
 }
     </script>
