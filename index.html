@@ -27,7 +27,7 @@
          playerName = prompt('Welcome to Bear Ninja Hunter! What is your name?');
          alert(`Hello, ${playerName}! Let's play Bear Ninja Hunter.`);
     }
-      const playerChoice = document.getElementById('playerChoice').value.toLowerCase();
+      const playerChoice =getElementById('playerChoice').value.toLowerCase();
       const choices = ['bear', 'ninja', 'hunter'];
       const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
@@ -35,12 +35,8 @@
 
      if (!choices.includes(playerChoice) {
         result = 'Invalid choice! Please enter Bear, Ninja, or Hunter.';
-    } else if (playerChoice === computerChoice) {
+    } else if (playerChoice=computerChoice) {
         result = `It's a tie! Both chose ${playerChoice}.`;
-    } else if (
-        (playerChoice === 'bear' && computerChoice === 'ninja') ||
-        (playerChoice === 'ninja' && computerChoice === 'hunter') ||
-        (playerChoice === 'hunter' && computerChoice === 'bear')
     ) {
         result = `You win, ${playerName}! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)} beats ${computerChoice}.`;
     } else {
