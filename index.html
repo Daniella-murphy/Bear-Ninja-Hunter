@@ -19,7 +19,7 @@
     <h1>Bear Ninja Hunter Game</h1>
     
   <div>
-    <script src="text/javascript">
+    <script type="text/javascript">
          let playerName = '';
 
          function playGame() {
@@ -47,7 +47,7 @@
         result = `You lose, ${playerName}! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${playerChoice}.`;
     }
 
-    document.getElementById('result').innerHTML = result;
+    <p id="result"></p>
     console.log(result);
 }
 
