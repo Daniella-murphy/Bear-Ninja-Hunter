@@ -28,10 +28,11 @@
             let playerName = prompt("Welcome to the Bear, Ninja, Hunter Game! Please enter your name:");
            
             // Store the user's input into a variable.
-            let message = prompt("Welcome" + playerName + "! Who's your character, Bear Ninja, or Hunter?");
+            let message = prompt( "Welcome" + playerName + "! Who's your character, Bear Ninja, or Hunter?" );
 
             // Put together a message for the players that combines text and the values of the variable.
-           let text = "Welcome" + playerName + "Let's play!"
+           let message = "Welcome" + playerName + "Let's play!"
+           
             // Output the concatenated strings using two (2) different output methods.
             document.getElementById("display").textContent = message;
             console.log(message);
