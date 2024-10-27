@@ -24,19 +24,18 @@
       
        <script type="text/javascript">
 
-        //present a text feild to gather use input.
-        
-             prompt("Welocome to the Bear, Ninja, Hunter Game);
+         // Present a text field to gather user input.
+            let playerName = prompt("Welcome to the Bear, Ninja, Hunter Game! Please enter your name:");
 
-         //store the user's input into a variable.
+            // Store the user's input into a variable.
+            let message = "Welcome " + playerName + "! Get ready to play!";
 
-
-         //put together a massage for the players that combine text and the values of the varible.
-
-         //output the concatenated strings using two (2) different output methods.
-          
-
-    </script>
+            // Put together a message for the players that combines text and the values of the variable.
+            // Output the concatenated strings using two (2) different output methods.
+            document.getElementById("display").textContent = message;
+            console.log(message);
+           
+         </script>
     </div>
     
 </body>
