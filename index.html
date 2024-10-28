@@ -17,30 +17,34 @@
     </style>
 </head>
 <body>
-    <h1>Bear Ninja Hunter Game</h1>
-    
-   <div>
-      <p id="display"></p>
-      
-       <script type="text/javascript">
+   <h1>Bear Ninja Hunter Game</h1>
 
-         // Present a text field to gather user input.
+    <div>
+        <p id="display"></p>
+
+        <script type="text/javascript">
+
+            //create variable that hardcodes computer's choice to "bear"
+            let computerChoice = "bear";
+            
+            // Present a text field to gather user's name.
             let playerName = prompt("Welcome to the Bear, Ninja, Hunter Game! Please enter your name:");
-           
-            // Store the user's input into a variable.
-            let message = prompt( "Welcome " + playerName + "! Who's your character, Bear Ninja, or Hunter?" );
 
-           // Display an alert message.
-              alert("Welcome to Bear, Ninja, Hunter Game!");
+            //use alert to show player's name
+            //alert(place concatenated string here saying "Hi (player's name) Let's play!")
+
+            // Store the user's input into a variable.
+            let playerChoice = prompt("Who's your character, Bear Ninja, or Hunter?");
+
 
             // Put together a message for the players that combines text and the values of the variable.
-           
+            let message = `${playerName}, You picked ${playerChoice}! The computer picked ${computerChoice}!`
+
             // Output the concatenated strings using two (2) different output methods.
-            document.getElementById("display").textContent = message;
+            document.getElementById("display").innerHTML = message;
             console.log(message);
-           
-         </script>
+
+        </script>
     </div>
-    
 </body>
 </html>
