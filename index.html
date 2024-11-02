@@ -24,8 +24,8 @@
 
         <script type="text/javascript">
 
-            //create variable that hardcodes computer's choice to "bear"
-            let computerChoice = "bear";
+            //create variable that hardcodes computer's choice to "Bear"
+            let computerChoice = "Bear";
             
             // Present a text field to gather user's name.
             let playerName = prompt("Welcome to the Bear, Ninja, Hunter Game! Please enter your name:");
@@ -40,27 +40,6 @@
             // Put together a message for the players that combines text and the values of the variable.
             let message = `${playerName}, You picked ${playerChoice}! The computer picked ${computerChoice}!`
 
-            function playGame(userChoice) {
-    const computerChoice = 'Bear';
-    let result;
-
-    switch(userChoice + '-' + computerChoice) {
-        case 'Bear-Bear':
-        case 'Ninja-Ninja':
-        case 'Hunter-Hunter':
-            result = 'It\'s a tie!';
-            break;
-        case 'Bear-Ninja':
-        case 'Ninja-Hunter':
-        case 'Hunter-Bear':
-            result = 'You win! ' + userChoice + ' beats ' + computerChoice;
-            break;
-        case 'Ninja-Bear':
-        case 'Hunter-Ninja':
-        case 'Bear-Hunter':
-            result = 'You lose! ' + computerChoice + ' beats ' + userChoice;
-            break;
-    }
             // Output the concatenated strings using two (2) different output methods.
             document.getElementById("display").innerHTML = message;
             console.log(message);
