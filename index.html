@@ -40,30 +40,6 @@
             document.getElementById("display").innerHTML = message;
             console.log(message);
 
-            // Game logic
-            function playGame(playerChoice) {
-                let result;
-
-                switch(playerChoice + '-' + computerChoice) {
-                    case 'Bear-Bear':
-                    case 'Ninja-Ninja':
-                    case 'Hunter-Hunter':
-                        result = 'It\'s a tie!';
-                        break;
-                    case 'Bear-Ninja':
-                    case 'Ninja-Hunter':
-                    case 'Hunter-Bear':
-                        result = `You win! ${playerChoice} beats ${computerChoice}`;
-                        break;
-                    case 'Ninja-Bear':
-                    case 'Hunter-Ninja':
-                    case 'Bear-Hunter':
-                        result = `You lose! ${computerChoice} beats ${playerChoice}`;
-                        break;
-                    default:
-                        result = 'Invalid choice! Please refresh and enter Bear, Ninja, or Hunter.';
-                }
-
                 // Output result to HTML
                 document.getElementById('result').innerHTML = result;
                 console.log(result);
