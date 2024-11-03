@@ -31,31 +31,47 @@
             let playerName = prompt("Welcome to the Bear, Ninja, Hunter Game! Please enter your name:");
 
             // Store the user's input into a variable.
-            let playerChoice = prompt("Who's your character, Bear, Ninja, or Hunter?");
+            let playerChoice = prompt("Who's your character, Bear, Ninja, or Hunter?").trim();
 
-            // Put together a message for the players that combines text and the values of the variable.
-            let message = `${playerName}, You picked ${playerChoice}! The computer picked ${computerChoice}!`;
-
-            // Output the concatenated strings using two different output methods.
-            document.getElementById("display").innerHTML = message;
-            console.log(message);
-
-            // Game logic with if-else
-            let result;
-
-            if (playerChoice === 'Bear' && computerChoice === 'Bear' || playerChoice === 'Ninja' && computerChoice === 'Ninja' || playerChoice === 'Hunter' && computerChoice === 'Hunter') {
-                result = 'It\'s a tie!';
-            } else if (playerChoice === 'Bear' && computerChoice === 'Ninja' || playerChoice === 'Ninja' && computerChoice === 'Hunter' || playerChoice === 'Hunter' && computerChoice === 'Bear') {
-                result = `You win! ${playerChoice} beats ${computerChoice}`;
-            } else if (playerChoice === 'Ninja' && computerChoice === 'Bear' || playerChoice === 'Hunter' && computerChoice === 'Ninja' || playerChoice === 'Bear' && computerChoice === 'Hunter') {
-                result = `You lose! ${computerChoice} beats ${playerChoice}`;
+            // Check for valid player input
+            const validChoices = ['Bear', 'Ninja', 'Hunter'];
+            if (!validChoices.includes(playerChoice)) {
+                alert("Invalid choice! Please refresh and enter Bear, Ninja, or Hunter.");
             } else {
-                result = 'Invalid choice! Please refresh and enter Bear, Ninja, or Hunter.';
-            }
+                // Put together a message for the players that combines text and the values of the variable.
+                let message = `${playerName}, You picked ${playerChoice}! The computer picked ${computerChoice}!`;
 
-            // Output result to HTML
-            document.getElementById('result').innerHTML = result;
-            console.log(result);
+                // Output the concatenated strings using two different output methods.
+                document.getElementById("display").innerHTML = message;
+                console.log(message);
+
+                // Game logic with switch and if-else
+                let result;
+
+                switch(playerChoice + '-' + computerChoice) {
+                    case 'Bear-Bear':
+                    case 'Ninja-Ninja':
+                    case 'Hunter-Hunter':
+                        result = 'It\'s a tie!';
+                        break;
+                    case 'Bear-Ninja':
+                    case 'Ninja-Hunter':
+                    case 'Hunter-Bear':
+                        result = `You win! ${playerChoice} beats ${computerChoice}`;
+                        break;
+                    case 'Ninja-Bear':
+                    case 'Hunter-Ninja':
+                    case 'Bear-Hunter':
+                        result = `You lose! ${computerChoice} beats ${playerChoice}`;
+                        break;
+                    default:
+                        result = 'Invalid choice! Please refresh and enter Bear, Ninja, or Hunter.';
+                }
+
+                // Output result to HTML
+                document.getElementById('result').innerHTML = result;
+                console.log(result);
+            }
         </script>
     </div>
 </body>
