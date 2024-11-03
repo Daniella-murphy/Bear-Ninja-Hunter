@@ -40,37 +40,22 @@
             document.getElementById("display").innerHTML = message;
             console.log(message);
 
-            // Game logic
-            function playGame(playerChoice) {
-                let result;
+            // Game logic with if-else
+            let result;
 
-                switch(playerChoice + '-' + computerChoice) {
-                    case 'Bear-Bear':
-                    case 'Ninja-Ninja':
-                    case 'Hunter-Hunter':
-                        result = 'It\'s a tie!';
-                        break;
-                    case 'Bear-Ninja':
-                    case 'Ninja-Hunter':
-                    case 'Hunter-Bear':
-                        result = `You win! ${playerChoice} beats ${computerChoice}`;
-                        break;
-                    case 'Ninja-Bear':
-                    case 'Hunter-Ninja':
-                    case 'Bear-Hunter':
-                        result = `You lose! ${computerChoice} beats ${playerChoice}`;
-                        break;
-                    default:
-                        result = 'Invalid choice! Please refresh and enter Bear, Ninja, or Hunter.';
-                }
-
-                // Output result to HTML
-                document.getElementById('result').innerHTML = result;
-                console.log(result);
+            if (playerChoice === 'Bear' && computerChoice === 'Bear' || playerChoice === 'Ninja' && computerChoice === 'Ninja' || playerChoice === 'Hunter' && computerChoice === 'Hunter') {
+                result = 'It\'s a tie!';
+            } else if (playerChoice === 'Bear' && computerChoice === 'Ninja' || playerChoice === 'Ninja' && computerChoice === 'Hunter' || playerChoice === 'Hunter' && computerChoice === 'Bear') {
+                result = `You win! ${playerChoice} beats ${computerChoice}`;
+            } else if (playerChoice === 'Ninja' && computerChoice === 'Bear' || playerChoice === 'Hunter' && computerChoice === 'Ninja' || playerChoice === 'Bear' && computerChoice === 'Hunter') {
+                result = `You lose! ${computerChoice} beats ${playerChoice}`;
+            } else {
+                result = 'Invalid choice! Please refresh and enter Bear, Ninja, or Hunter.';
             }
 
-            // Play the game with user's choice
-            playGame(playerChoice);
+            // Output result to HTML
+            document.getElementById('result').innerHTML = result;
+            console.log(result);
         </script>
     </div>
 </body>
